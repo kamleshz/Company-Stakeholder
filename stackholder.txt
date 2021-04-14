@@ -1,0 +1,106 @@
+>>> Steps which will be using while solving data 
+
+1>>Problem Statement = Visualization of Company Stakeholder
+
+>> 1st step: we need to import the libraries 
+           >> import pandas
+	   >> import numpy
+	   >> import matplotlib
+           >> import seabird 
+>> 2nd step: after importing the libraries then we have to store the data into the variable so that file can easily the data
+           << once the data stored into the variable then we have to read the data using pd.read_csv (){in parenthesis we have to
+              implement one argument (i.e. the variable where we had storied the data.
+           << in next step we stored the new variable called loan_status from here we are counting the value using value_counts()
+>> 3rd step: Ploting the bar graph
+           << as we already import our libraries, so by using those libraries we are plotting the bar graph.
+           << basis step (plt.bar(){inside parenthesis we need to provide the 2 argument(for x & y axis)
+ 	      giving the title to graph using (plt.title("name of title") for x axis name (plt.xlabel("x axis name")
+	      for y axis name (plt.ylabel("y axis name"), if you implement grid then use (plt.grid(True){True argument shows the
+	      grid lines, False argument does not show grid lines})
+              fianlly plt.show(), then we able to see your graph 
+	   << To change bar color use (plt.bar(2 argument, color="name of the color")
+
+>>>>Things to ponder upon:
+
+  - Company has more 'loan approvals' or 'loan disapprovals'?
+
+	<<< To find whether loan approval is more or loan disapproval, we named 2 factors "Yes" & "No"  
+            <<>> The graph represents number of people whose loan approval is more, now the question comes why are they having more numbers??
+                 ...ones you applied to loan, then your representative bank analysis your bank account, check your credit score if your score is
+		    good enough then the bank will be processed for a Documentation check, and further your loan gets approved.
+ 	   <<>> Those who are not applicable mean those whose loan is disapproved they are not eligible or their credit score is low. 
+  - Can one of the company's health factors be its loan status distribution?
+	   <<>> its hard to say the company have to check with financial sector, there are 4 critical areas of financial 
+	         <. Liquidity 
+	         <. solvency 
+	         <. Profitability
+	         <. Operating efficiency
+                 <. Bottom Line
+
+<<<< Everyone needs money 
+    >>>> here stakeholder want to see in which region have highest no. of loan approval & lower no. loan approval
+	<<< by using "groupby" we can extract data from 'property_area' and 'loan_status'
+            {groupby is used when we have to extract the data from column names, aggregate functions, constants and expressions.}
+	<<< Plotting unstack bar (stack = false ) . plt(kind = 'bar',stack = false,color = '', figsize = (,)
+             {figsize = here need to give 2 values for complete bar which representslength and height of bar}
+	<<< the remaining portion for plotting is we can change the bar color, name the title (plt.title = ""), name x & y axis(plt.xlabel& plt.ylabel)
+	<<< to rotate the name(plt.xtrick (in xtrick x is x axis) plt.xtrick(rotation = degree)
+
+<<<<Things to ponder upon
+<<<<<>>>>>>- Which is the region with the highest no. of loan approvals? lowest no. of loan approvals?
+		<<>> To visualize the highest no. loan approval & lowest no. loan approval in region like <. urban <. semiurban <.rural
+			<<>> As comapred to 3 region the highest no. loan approval in semiurban region (175) and lowest no. of loan approval is also semiurban region (51)  
+													
+<<<<<>>>>>>- Which is the region with the maximum difference between loan approvals and loan rejections?
+		<<>> As its clearly shown in graph the semiurban region is the region where we had found the maximum diff between loan approval and loan rejection. (175-51 = 124)
+
+
+<<<< Expensive Education
+    >>>> here stakeholder want to know by which group (graduate or non graduate)  applied for loan.
+	<<< by using "groupby" we can extract data from 'education' and 'loan_status'
+            {groupby is used when we have to extract the data from column names, aggregate functions, constants and expressions.}
+	<<< Plotting unstack bar (stack = True ) . plt(kind = 'bar',stack = True,color = '', figsize = (,){figsize = here need to give 2 values for complete bar which represent 
+	    length and height of bar}
+	<<< the remaining portion for plotting is we can change the bar color, name the title (plt.title = ""), name x & y axis(plt.xlabel& plt.ylabel)
+	<<< to rotate the name(plt.xtrick (in xtrick x is x axis) plt.xtrick(rotation = degree)
+
+<<<<<Things to ponder upon (Higher education has always been an expensive endeavour for people but it results in better career opportunities and stability in life. 
+                            But does higher education result in a better guarantee in issuing loans?)
+<<<<<>>>>- Overall which group has asked for higher loan services irrespective of the approval? Graduate or Non-Graduate?
+	 <<>> irrespective of approe knval the graduate are applied for more loan than non - graduates 
+<<<<<>>>>- Which group has had better approval to non-approval ratio? Graduate or Non-Graduate?
+	 <<>> the non-graduates have better approval to non-approval ration than graduates. 
+
+<<<<>>>>Do the above conclusions make sense? Why?
+	>>>... If we talk about the education, in todays era we can differentite education into 2 parts
+               >. The Eduaction which people can afford >. Higher education ( Some people cant afford but they find a way to grab knowledge)
+		   Education is same everywhere but the way of teaching, atmosphere, infrastructure, portpolio of organisation, getting job ration from the organization the factor 
+		   may differ from normal education and higher education.
+	       >. if we talk about career opportunities from higher studies i think it partially depend upon the yourself and the college or university, by the end your performance will speck
+		  good college or university will also create impact on your carrier.
+	       >. In this scenrio the graduates applied for higher loan service, most of the have graduates applied for education loan etc.(the graduates are applied for higher studies are most of the 
+                  higher studies are expensive) and non-graduates in this factor( it depends on stackholders which type are people 
+		  they are considering in the non-graduates catogries)
+
+<<<<< Smater and Richer
+	>>>> Here we need to check the being graduate or not also leads to different loan amount distribution with the help of overlapping Density plot.
+		<<< first we are subsetting the dataframe based on 'Education' column for Graduate and Not Graduate. 
+
+<<<<>>>>Things to ponder upon
+<<<<<>>>>- Do Graduate people get approved a higher amount than their Non Graduate counterparts?
+	>>>.. ????
+<<<<<>>>>- What's the average amount of loan approved for Graduate? for Non-Graduate? Is there a huge difference between the two? 
+	>>>...????
+
+
+<<<<<<  Income vs Loan
+	we need to understand the correlation between the borrower's income and loan amount he is lent with the help of graph
+	<.> for this  we are making 3 scatter plots(ax_1,ax_2,ax_3) 'Applicant Income','Coapplicant Income','Total Income' vs 'Loan Amount'
+	<<.>>scatter plot is used to show the relationship between 2 variable.
+
+<<<<<>>>>>>Things to ponder upon
+<<<<<<>>>>>>- Is there a correlation between 'ApplicantIncome' and 'LoanAmount'?(One way to know that is looking at the line formed when you connect the scatter plot dots?)
+
+<<<>>>>>- Is the 'TotalIncome' better related to the 'LoanAmount' than 'ApplicantIncome'?
+		<<>> Yes if we compare the both scatter plots we can say that Total income is better than applicant income
+
